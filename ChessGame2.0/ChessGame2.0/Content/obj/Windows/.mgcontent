@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/Black Bishop Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/Black King Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/Black Knight Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/Black Pawn Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/Black Queen Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/Black Rook Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/White Bishop Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/White King Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/White Knight Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/White Pawn Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/White Queen Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/White Rook Sprite.png</File>
+    <File>K:/ChessGame/ChessGame2.0/ChessGame2.0/Content/White Rook Sprite2.0.png</File>
+  </SourceFiles>
+</SourceFileCollection>

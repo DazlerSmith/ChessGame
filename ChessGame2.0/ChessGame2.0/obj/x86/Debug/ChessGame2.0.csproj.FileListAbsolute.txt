@@ -1,0 +1,39 @@
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\Content.mgcb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\ChessGame2.0.exe
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\ChessGame2.0.pdb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\MonoGame.Framework.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.XInput.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\MonoGame.Framework.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.XInput.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+K:\ChessGame\ChessGame2.0\ChessGame2.0\obj\x86\Debug\ChessGame2.0.csprojAssemblyReference.cache
+K:\ChessGame\ChessGame2.0\ChessGame2.0\obj\x86\Debug\ChessGame2.0.csproj.CoreCompileInputs.cache
+K:\ChessGame\ChessGame2.0\ChessGame2.0\obj\x86\Debug\ChessGame2.0.csproj.CopyComplete
+K:\ChessGame\ChessGame2.0\ChessGame2.0\obj\x86\Debug\ChessGame2.0.exe
+K:\ChessGame\ChessGame2.0\ChessGame2.0\obj\x86\Debug\ChessGame2.0.pdb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\Black Bishop Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\Black King Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\Black Knight Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\Black Pawn Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\Black Queen Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\Black Rook Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\White Bishop Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\White King Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\White Knight Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\White Pawn Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\White Queen Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\White Rook Sprite.xnb
+K:\ChessGame\ChessGame2.0\ChessGame2.0\bin\Windows\x86\Debug\Content\White Rook Sprite2.0.xnb
