@@ -15,6 +15,7 @@ namespace ChessGame2._0
         int size = 8;
         int hoffset = 200;
         int voffset = 50;
+        Piece Selected = null;
 
         public Square[,] Squares = new Square[8,8];
 
@@ -39,10 +40,73 @@ namespace ChessGame2._0
             //SetupBoard();
         }
 
-        public void SetupBoard()
+        public void Unselect()
         {
+            for (int r = 0; r < size; r++)
+            {
+                for (int c = 0; c < size; c++)
+                {
+                    if (Squares[r, c].OnSquare != null)
+                    {
+                        Squares[r, c].OnSquare.IsSelected = false;
+                        Squares[r, c].IsSelected = false;
+                    }
 
+
+                }
+            }
+            Selected = null;
         }
+
+        //Mouse Input
+        public void ClickBoard(int X, int Y)
+        {
+            Y = Y - 50;
+            X = X - 200;   
+
+            X = X / 50;
+            Y = Y / 50;
+            if (X >= 0 && X <= 7 && Y >= 0 && Y <= 7)
+            {
+                if (Selected != null)
+                {
+
+                }
+                else
+                {
+                    Unselect();
+                    if (Squares[Y, X].OnSquare != null)
+                    {
+                        Squares[Y, X].IsSelected = true;
+                        Squares[Y, X].OnSquare.IsSelected = true;
+                        Selected = Squares[Y, X].OnSquare;
+                        Console.WriteLine("Piece Selected " + X + Y);
+                    }
+                }
+                Console.WriteLine(X + " " + Y + " ");
+            }
+            else
+                Unselect();
+           
+        }
+
+        /*public bool LeftButtonReleased()
+        {
+            if (Mouse.GetState().LeftButton == ButtonState.Released && Mouse.GetState().LeftButton != ButtonState.Pressed)
+                return true;
+            else
+                return false;
+        }
+
+        public bool LeftButtonPressed()
+        {
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed && Mouse.GetState().LeftButton != ButtonState.Released)   
+                return true;
+            else
+                return false;
+        }
+        */
+
 
         public void Draw(SpriteBatch sb)
         {
@@ -57,6 +121,8 @@ namespace ChessGame2._0
 
                 }
             }
+            if (Selected != null)
+                Selected.Draw(sb);
         }
 
 
