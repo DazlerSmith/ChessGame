@@ -55,97 +55,158 @@ namespace ChessGame2._0
     }
     class Pawn:Piece
     {
-        public Pawn(Texture2D t, int r, int c, int vo, int ho):base(t,r,c,vo,ho)
+        public Pawn(Texture2D t, int r, int c, int vo, int ho, bool w):base(t,r,c,vo,ho, w)
         {
 
         }
 
-        public override void CheckMove()
+        public override bool CheckMove(int x, int y, Square[,] s)
         {
-
+            if (!IsWhite)
+            {
+                if (s[y, x].OnSquare != null)
+                {
+                    if (s[y, x].OnSquare.IsWhite)  //If piece on selected square is white
+                    {
+                        if ((row + 1 == x && column == y - 1) || (row + 1 == x && column == y + 1)) 
+                            return true; // if the selected piece is 1 in front and either to the left or right then 
+                        else
+                        {
+                            Console.WriteLine("f1 : "+y+" "+x +" : "+ s[y, x].OnSquare.column + " "+ s[y, x].OnSquare.row);  //return true
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("f2"); 
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (row == 1)
+                    {
+                        if (row + 1 == x && column == y || row + 2 == x && column == y)
+                            return true;
+                        else
+                        {
+                            Console.WriteLine("f3");
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        if (row + 1 == x && column == y)
+                            return true;
+                        else
+                        {
+                            Console.WriteLine("f3");
+                            return false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (row == 6)
+                {
+                    if (row - 1 == x && column == y || row - 2 == x && column == y)
+                        return true;
+                    else
+                        return false;
+                }
+                else
+                {
+                    if (row - 1 == x && column == y)
+                        return true;
+                    else
+                        return false;
+                }
+            }
         }
     }
 
     class Bishop : Piece
     {
-        public Bishop(Texture2D t, int r, int c, int vo, int ho) : base(t, r, c, vo, ho)
+        public Bishop(Texture2D t, int r, int c, int vo, int ho, bool w) : base(t, r, c, vo, ho, w)
         {
 
         }
 
-        public override void CheckMove()
+        public override bool CheckMove(int x, int y ,Square[,] s)
         {
-
+            return true;
         }
     }
 
     class Rook : Piece
     {
-        public Rook(Texture2D t, int r, int c, int vo, int ho) : base(t, r, c, vo, ho)
+        public Rook(Texture2D t, int r, int c, int vo, int ho, bool w) : base(t, r, c, vo, ho, w)
         {
 
         }
 
-        public override void CheckMove()
+        public override bool CheckMove(int x, int y, Square[,] s)
         {
-
+            return true;
         }
     }
 
     class Knight : Piece
     {
-        public Knight(Texture2D t, int r, int c, int vo, int ho) : base(t, r, c, vo, ho)
+        public Knight(Texture2D t, int r, int c, int vo, int ho, bool w) : base(t, r, c, vo, ho, w)
         {
 
         }
 
-        public override void CheckMove()
+        public override bool CheckMove(int x, int y, Square[,] s)
         {
-
+            return true;
         }
     }
 
     class Queen : Piece
     {
-        public Queen(Texture2D t, int r, int c, int vo, int ho) : base(t, r, c, vo, ho)
+        public Queen(Texture2D t, int r, int c, int vo, int ho, bool w) : base(t, r, c, vo, ho, w)
         {
 
         }
 
-        public override void CheckMove()
+        public override bool CheckMove(int x, int y, Square[,] s)
         {
-
+            return true;
         }
     }
 
     class King : Piece
     {
-        public King(Texture2D t, int r, int c, int vo, int ho) : base(t, r, c, vo, ho)
+        public King(Texture2D t, int r, int c, int vo, int ho, bool w) : base(t, r, c, vo, ho, w)
         {
 
         }
 
-        public override void CheckMove()
+        public override bool CheckMove(int x, int y, Square[,] s)
         {
-
+            return true;
         }
 
     }
 
     abstract class Piece
     {
-        int row;
-        int column;
+        public int row;
+        public int column;
         public Texture2D PieceTexture;
-        Vector2 Position;
-        int width = 50;
-        int height = 50;
-        int hoffset;
-        int voffset;
-        Rectangle dest;
+        protected Vector2 Position;
+        protected int width = 50;
+        protected int height = 50;
+        protected int hoffset;
+        protected int voffset;
+        protected Rectangle dest;
+        public bool IsWhite;
         public bool IsSelected;
 
-        public Piece(Texture2D t, int r, int c, int vo, int ho)
+        public Piece(Texture2D t, int r, int c, int vo, int ho, bool w)
         {
             PieceTexture = t;
             row = r;
@@ -154,11 +215,20 @@ namespace ChessGame2._0
             voffset = vo;
             Position = new Vector2((c*width)+ho, (r*height) + vo);
             IsSelected = false;
+            IsWhite = w;
             
-            Console.WriteLine("Piece created " +r+" " + c +" "+dest);
+            Console.WriteLine("Piece created " + r +" "+ c +" "+ dest);
         }
 
-        public abstract void CheckMove();
+        public void updateposition(int r, int c)
+        {
+            row = r;
+            column = c;
+            Position = new Vector2((c * width) + hoffset, (r * height) + voffset);
+            Console.WriteLine(r + " " + c + " : " + Position);
+        }
+
+        public abstract bool CheckMove(int x, int y, Square[,] s);
 
         public void Draw(SpriteBatch spriteBatch)
         {
