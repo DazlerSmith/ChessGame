@@ -65,91 +65,91 @@ namespace ChessGame2._0
             for (int i = 0; i < 8; i++)
             {
                 //temp = new Piece(PieceTexture, i, 1, 50, 200);
-                test.Squares[6, i].OnSquare = new Pawn(PieceTexture, 6, i, 50, 200, true);  // r , c , offsets
-                Console.WriteLine(test.Squares[6, i].OnSquare.ToString());
+                test.Squares[i, 6].OnSquare = new Pawn(PieceTexture, i, 6, 50, 200, true);  // r , c , offsets
+                Console.WriteLine(test.Squares[i, 6].OnSquare.ToString());
             }          
 
             PieceTexture = Content.Load<Texture2D>("White Rook Sprite2.0");
-            temp = new Rook(PieceTexture, 7, 0, 50, 200, true);
-            test.Squares[7, 0].OnSquare = temp;
-            Console.WriteLine(test.Squares[7 , 0].OnSquare.ToString());
+            temp = new Rook(PieceTexture, 0, 7, 50, 200, true);
+            test.Squares[0, 7].OnSquare = temp;
+            Console.WriteLine(test.Squares[0, 7].OnSquare.ToString());
 
             temp = new Rook(PieceTexture, 7, 7, 50, 200, true);
             test.Squares[7, 7].OnSquare = temp;
             Console.WriteLine(test.Squares[7, 7].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("White Bishop Sprite");
-            temp = new Bishop(PieceTexture, 7, 2, 50, 200, true);
-            test.Squares[7 , 2].OnSquare = temp;
-            Console.WriteLine(test.Squares[7 , 2].OnSquare.ToString());
+            temp = new Bishop(PieceTexture, 2, 7, 50, 200, true);
+            test.Squares[2, 7].OnSquare = temp;
+            Console.WriteLine(test.Squares[2, 7].OnSquare.ToString());
 
-            temp = new Bishop(PieceTexture, 7 , 5, 50, 200, true);
-            test.Squares[7 , 5].OnSquare = temp;
-            Console.WriteLine(test.Squares[7 , 5].OnSquare.ToString());
+            temp = new Bishop(PieceTexture, 5, 7, 50, 200, true);
+            test.Squares[5, 7].OnSquare = temp;
+            Console.WriteLine(test.Squares[5, 7].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("White Knight Sprite");
-            temp = new Knight(PieceTexture, 7, 1, 50, 200, true);
-            test.Squares[7, 1].OnSquare = temp;
-            Console.WriteLine(test.Squares[7, 1].OnSquare.ToString());
+            temp = new Knight(PieceTexture, 1, 7, 50, 200, true);
+            test.Squares[1, 7].OnSquare = temp;
+            Console.WriteLine(test.Squares[1, 7].OnSquare.ToString());
 
-            temp = new Knight(PieceTexture, 7, 6, 50, 200, true);
-            test.Squares[7, 6].OnSquare = temp;
-            Console.WriteLine(test.Squares[7, 6].OnSquare.ToString());
+            temp = new Knight(PieceTexture, 6, 7, 50, 200, true);
+            test.Squares[6, 7].OnSquare = temp;
+            Console.WriteLine(test.Squares[6, 7].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("White King Sprite");
-            temp = new King(PieceTexture, 7, 4, 50, 200, true);
-            test.Squares[7, 4].OnSquare = temp;
-            Console.WriteLine(test.Squares[7, 4].OnSquare.ToString());
+            temp = new King(PieceTexture, 4, 7, 50, 200, true);
+            test.Squares[4, 7].OnSquare = temp;
+            Console.WriteLine(test.Squares[4, 7].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("White Queen Sprite");
-            temp = new Queen(PieceTexture, 7, 3, 50, 200, true);
-            test.Squares[7, 3].OnSquare = temp;
-            Console.WriteLine(test.Squares[7, 3].OnSquare.ToString());
+            temp = new Queen(PieceTexture, 3, 7, 50, 200, true);
+            test.Squares[3, 7].OnSquare = temp;
+            Console.WriteLine(test.Squares[3, 7].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("Black Pawn Sprite");
             for (int i = 0; i < 8; i++)
             {
-                temp = new Pawn(PieceTexture, 1, i, 50, 200, false);
-                test.Squares[1, i].OnSquare = temp;
-                Console.WriteLine(test.Squares[1, i].OnSquare.ToString());
+                temp = new Pawn(PieceTexture, i, 1, 50, 200, false);
+                test.Squares[i, 1].OnSquare = temp;
+                Console.WriteLine(test.Squares[i, 1].OnSquare.ToString());
             }
 
                 PieceTexture = Content.Load<Texture2D>("Black Bishop Sprite");
-            temp = new Bishop(PieceTexture, 0, 2, 50, 200, false);
-            test.Squares[0,2].OnSquare = temp;
-            Console.WriteLine(test.Squares[0, 2].OnSquare.ToString());
+            temp = new Bishop(PieceTexture, 2, 0, 50, 200, false);
+            test.Squares[2, 0].OnSquare = temp;
+            Console.WriteLine(test.Squares[2, 0].OnSquare.ToString());
 
-            temp = new Bishop(PieceTexture, 0, 5, 50, 200, false);
-            test.Squares[0, 5].OnSquare = temp;
-            Console.WriteLine(test.Squares[0, 5].OnSquare.ToString());
+            temp = new Bishop(PieceTexture, 5, 0, 50, 200, false);
+            test.Squares[5, 0].OnSquare = temp;
+            Console.WriteLine(test.Squares[5, 0].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("Black Rook Sprite");
             temp = new Rook(PieceTexture, 0, 0, 50, 200, false);
             test.Squares[0, 0].OnSquare = temp;
             Console.WriteLine(test.Squares[0, 0].OnSquare.ToString());
 
-            temp = new Rook(PieceTexture, 0, 7, 50, 200, false);
-            test.Squares[0, 7].OnSquare = temp;
-            Console.WriteLine(test.Squares[0, 7].OnSquare.ToString());
+            temp = new Rook(PieceTexture, 7, 0, 50, 200, false);
+            test.Squares[7, 0].OnSquare = temp;
+            Console.WriteLine(test.Squares[7, 0].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("Black Knight Sprite");
-            temp = new Knight(PieceTexture, 0, 1, 50, 200, false);
-            test.Squares[0, 1].OnSquare = temp;
-            Console.WriteLine(test.Squares[0, 1].OnSquare.ToString());
+            temp = new Knight(PieceTexture, 1, 0, 50, 200, false);
+            test.Squares[1, 0].OnSquare = temp;
+            Console.WriteLine(test.Squares[1, 0].OnSquare.ToString());
 
-            temp = new Knight(PieceTexture, 0, 6, 50, 200, false);
-            test.Squares[0, 6].OnSquare = temp;
-            Console.WriteLine(test.Squares[0, 6].OnSquare.ToString());
+            temp = new Knight(PieceTexture, 6, 0, 50, 200, false);
+            test.Squares[6, 0].OnSquare = temp;
+            Console.WriteLine(test.Squares[6, 0].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("Black King Sprite");
-            temp = new King(PieceTexture, 0, 4, 50, 200, false);
-            test.Squares[0, 4].OnSquare = temp;
-            Console.WriteLine(test.Squares[0, 4].OnSquare.ToString());
+            temp = new King(PieceTexture, 4, 0, 50, 200, false);
+            test.Squares[4, 0].OnSquare = temp;
+            Console.WriteLine(test.Squares[4, 0].OnSquare.ToString());
 
             PieceTexture = Content.Load<Texture2D>("Black Queen Sprite");
-            temp = new Queen(PieceTexture, 0, 3, 50, 200, false);
-            test.Squares[0, 3].OnSquare = temp;
-            Console.WriteLine(test.Squares[0, 3].OnSquare.ToString());
+            temp = new Queen(PieceTexture, 3, 0, 50, 200, false);
+            test.Squares[3, 0].OnSquare = temp;
+            Console.WriteLine(test.Squares[3, 0].OnSquare.ToString());
 
         }
 

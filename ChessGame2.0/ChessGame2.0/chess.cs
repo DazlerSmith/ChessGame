@@ -62,65 +62,96 @@ namespace ChessGame2._0
 
         public override bool CheckMove(int x, int y, Square[,] s)
         {
-            if (!IsWhite)
+            if (!IsWhite) //Piece is black
             {
-                if (s[y, x].OnSquare != null)
+                if (s[x, y].OnSquare == null) //If selected square has not got a piece on it
                 {
-                    if (s[y, x].OnSquare.IsWhite)  //If piece on selected square is white
+                    if (column == 1)
                     {
-                        if ((row + 1 == x && column == y - 1) || (row + 1 == x && column == y + 1)) 
-                            return true; // if the selected piece is 1 in front and either to the left or right then 
+                        Console.WriteLine(" row " + row + " : " + " column " + column);     //The row and column are constants
+                        Console.WriteLine(" x " + x + " : " + " y " + y);                   //It is only x and y that change
+                        if (column == y - 1 && row == x || column == y - 2 && row == x)
+                            return true;
                         else
-                        {
-                            Console.WriteLine("f1 : "+y+" "+x +" : "+ s[y, x].OnSquare.column + " "+ s[y, x].OnSquare.row);  //return true
-                            return false;
-                        }
+                            Console.WriteLine(" Stupid Reason 1");
+                        return false;
+
                     }
                     else
                     {
-                        Console.WriteLine("f2"); 
+                        if (column == y - 1 && row == x)
+                            return true;
+                        else
+                            Console.WriteLine(" Stupid Reason 2");
                         return false;
                     }
                 }
                 else
                 {
-                    if (row == 1)
+                    if (s[x, y].OnSquare.IsWhite )
                     {
-                        if (row + 1 == x && column == y || row + 2 == x && column == y)
+                        if (column == y - 1 && (row == x + 1 || row == x - 1))
+
                             return true;
+
                         else
-                        {
-                            Console.WriteLine("f3");
-                            return false;
-                        }
+
+                            Console.WriteLine(" Stupid Reason 3");
+                        return false;
                     }
                     else
                     {
-                        if (row + 1 == x && column == y)
-                            return true;
-                        else
-                        {
-                            Console.WriteLine("f3");
-                            return false;
-                        }
+                        Console.WriteLine(" Stupid Reason 4");
+                        return false;
                     }
+                   
                 }
             }
             else
             {
-                if (row == 6)
+                if (s[x, y].OnSquare == null) //If selected square has not got a piece on it
                 {
-                    if (row - 1 == x && column == y || row - 2 == x && column == y)
-                        return true;
+                    if (column == 6)
+                    {
+                        Console.WriteLine(" row " + row + " : " + " column " + column);  //x is rows and y is column they are inverted
+                        Console.WriteLine(" x " + x + " : " + " y " + y);                //column represents x though
+                        if (column == y + 1 && row == x || column == y + 2 && row == x)
+                            return true;
+                        else
+                        {
+                            Console.WriteLine(" Stupid Reason 5");
+
+                            return false;
+                        }
+                    }
                     else
+                    {
+                        if (column == y + 1 && row == x)
+                            return true;
+                        else
+                            Console.WriteLine(" Stupid Reason 6");
                         return false;
+                    }
                 }
                 else
                 {
-                    if (row - 1 == x && column == y)
-                        return true;
-                    else
+                    if (s[x, y].OnSquare.IsWhite == false)
+                    {
+                        if (column == y + 1 && (row == x + 1 || row == x - 1))
+
+                            return true;
+
+                        else
+
+                            Console.WriteLine(" Stupid Reason 7");
                         return false;
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Stupid Reason 8");
+                        return false;
+                    }
+                    
                 }
             }
         }
@@ -134,7 +165,8 @@ namespace ChessGame2._0
         }
 
         public override bool CheckMove(int x, int y ,Square[,] s)
-        {
+        {         
+
             return true;
         }
     }
@@ -148,7 +180,21 @@ namespace ChessGame2._0
 
         public override bool CheckMove(int x, int y, Square[,] s)
         {
-            return true;
+            if (true)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    if (!IsWhite)
+                    {
+                        if (s[x,y].OnSquare != null)
+                        {
+
+                        }
+                    }
+                }
+                return true;
+            }
+            
         }
     }
 
@@ -156,12 +202,75 @@ namespace ChessGame2._0
     {
         public Knight(Texture2D t, int r, int c, int vo, int ho, bool w) : base(t, r, c, vo, ho, w)
         {
-
+           
         }
 
         public override bool CheckMove(int x, int y, Square[,] s)
         {
-            return true;
+            if (!IsWhite) //Piece is black
+            {
+                if (s[x, y].OnSquare != null) //If piece on square is true
+                {
+                    if (s[x, y].OnSquare.IsWhite) //If piece on target square is white (attackable)
+                    {
+                        if ((column == y - 2 && (row == x - 1 || row == x + 1)) || (column == y + 2 && (row == x - 1 || row == x + 1)) || (row == x + 2 && (column == y - 1 || column == y + 1)) || (row == x - 2 && (column == y - 1 || column == y + 1)))
+                        {
+                            return true; 
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {                                  
+                        return false;
+                    }
+                }
+                else
+                {
+                    if ((column == y - 2 && (row == x - 1 || row == x + 1)) || (column == y + 2 && (row == x - 1 || row == x + 1)) || (row == x + 2 && (column == y - 1 || column == y + 1)) || (row == x - 2 && (column == y - 1 || column == y + 1)))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                if (s[x, y].OnSquare != null) //If piece on square is true
+                {
+                    if (s[x, y].OnSquare.IsWhite == false)
+                    {
+                        if ((column == y - 2 && (row == x - 1 || row == x + 1)) || (column == y + 2 && (row == x - 1 || row == x + 1)) || (row == x + 2 && (column == y - 1 || column == y + 1)) || (row == x - 2 && (column == y - 1 || column == y + 1)))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if ((column == y - 2 && (row == x - 1 || row == x + 1)) || (column == y + 2 && (row == x - 1 || row == x + 1)) || (row == x + 2 && (column == y - 1 || column == y + 1)) || (row == x - 2 && (column == y - 1 || column == y + 1)))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
     }
 
@@ -187,7 +296,70 @@ namespace ChessGame2._0
 
         public override bool CheckMove(int x, int y, Square[,] s)
         {
-            return true;
+            if (!IsWhite) //black
+            {
+                if (s[x,y].OnSquare != null) //target square is occupied
+                {
+                    if (s[x, y].OnSquare.IsWhite)
+                    {
+                        if ((column == y - 1 && (row == x - 1 || row == x + 1 || row == x)) || (column == y + 1 && (row == x - 1 || row == x + 1 || row == x)) || (column == y && (row == x + 1 || row == x - 1)))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if ((column == y - 1 && (row == x - 1 || row == x + 1 || row == x)) || (column == y + 1 && (row == x - 1 || row == x + 1 || row == x)) || (column == y && (row == x + 1 || row == x - 1)))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                if (s[x, y].OnSquare != null) //target square is occupied
+                {
+                    if (s[x, y].OnSquare.IsWhite == false)
+                    {
+                        if ((column == y - 1 && (row == x - 1 || row == x + 1 || row == x)) || (column == y + 1 && (row == x - 1 || row == x + 1 || row == x)) || (column == y && (row == x + 1 || row == x - 1)))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if ((column == y - 1 && (row == x - 1 || row == x + 1 || row == x)) || (column == y + 1 && (row == x - 1 || row == x + 1 || row == x)) || (column == y && (row == x + 1 || row == x - 1)))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
 
     }
@@ -213,7 +385,7 @@ namespace ChessGame2._0
             column = c;
             hoffset = ho;
             voffset = vo;
-            Position = new Vector2((c*width)+ho, (r*height) + vo);
+            Position = new Vector2((c * width) + ho, (r * height) + vo); //((c * width) + ho, (r * height) + vo)
             IsSelected = false;
             IsWhite = w;
             
@@ -224,12 +396,11 @@ namespace ChessGame2._0
         {
             row = r;
             column = c;
-            Position = new Vector2((c * width) + hoffset, (r * height) + voffset);
-            Console.WriteLine(r + " " + c + " : " + Position);
+            Position = new Vector2((c * width) + hoffset, (r * height) + voffset);  //((c * width) + hoffset, (r * height) + voffset)
+            Console.WriteLine(c + " " + r + " : " + Position);
         }
 
         public abstract bool CheckMove(int x, int y, Square[,] s);
-
         public void Draw(SpriteBatch spriteBatch)
         {
           
